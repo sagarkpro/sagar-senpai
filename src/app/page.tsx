@@ -4,6 +4,21 @@ export default function Home() {
 	return (
 		<div className="flex justify-center py-8">
 			<div className="w-[70rem]">
+				<div className="flex w-full justify-center">
+					<div className="flex gap-x-8 mb-6">
+						<a href="https://www.linkedin.com/in/sagarkhatri01/" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+							<Image className="object-cover" fill objectFit="cover" src="/linkedin.png" alt="linkedin" />
+						</a>
+
+            <a href="https://github.com/sagarkpro?tab=stars" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+							<Image className="object-cover" fill objectFit="cover" src="/github.png" alt="github" />
+						</a>
+
+            <a href="https://www.instagram.com/astute_sagar/" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+							<Image className="object-cover" fill objectFit="cover" src="/instagram.png" alt="instagram" />
+						</a>
+					</div>
+				</div>
 				<div className="w-full flex gap-x-20">
 					<div className="w-[31rem] h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
 						<Image className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" src="/sagar2.jpg" alt="sagar" />
@@ -24,7 +39,8 @@ export default function Home() {
 						</p>
 
 						<p className="text-justify font-semibold text-lg">
-							I clean other&apos;s <span className="font-extrabold">Vibe Code</span> mess-up, I write clean following the best practices I can find, I deliver end-to-end features. Be it Frontend, Backend or even Database, I got it covered!
+							I clean other&apos;s <span className="font-extrabold">Vibe Code</span> mess-up, I write clean code, following the best practices I can find anywhere, I deliver end-to-end features. Be it Frontend, Backend or even Database, I got it
+							covered!
 						</p>
 
 						<h1 className="mt-5 text-3xl font-bold text-left">My Expertise?</h1>
@@ -47,8 +63,8 @@ export default function Home() {
 
 					<p>
 						{" "}
-						<span className="font-bold text-xl">&bull;Next.js</span> - With Next.js 15, you don&apos;t need to be an expert to make an highly optimizes and SEO friendly app, it offers everything you need out of the box! After all, this website is also made using
-						Next.js!
+						<span className="font-bold text-xl">&bull;Next.js</span> - With Next.js 15, you don&apos;t need to be an expert to make an highly optimizes and SEO friendly app, it offers everything you need out of the box! After all, this website is
+						also made using Next.js!
 					</p>
 
 					<p>
