@@ -2,39 +2,40 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<div className="flex justify-center py-8">
+		<div className="flex justify-center py-8 px-4">
 			<div className="w-[70rem]">
 				<div className="flex w-full justify-center">
 					<div className="flex gap-x-8 mb-6">
-						<a href="https://www.linkedin.com/in/sagarkhatri01/" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+						<a href="https://www.linkedin.com/in/sagarkhatri01/" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/linkedin.png" alt="linkedin" />
 						</a>
 
-            <a href="https://github.com/sagarkpro?tab=stars" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+            <a href="https://github.com/sagarkpro?tab=stars" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/github.png" alt="github" />
 						</a>
 
-            <a href="https://www.instagram.com/astute_sagar/" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+            <a href="https://www.instagram.com/astute_sagar/" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/instagram.png" alt="instagram" />
 						</a>
 					</div>
 				</div>
-				<div className="w-full flex gap-x-20">
-					<div className="w-[31rem] h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
+				<div className="w-full flex flex-col md:flex-row md:gap-x-20">
+					<div className="w-full aspect-[1/1.5] md:m-0 md:w-[31rem] md:h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
 						<Image className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" src="/sagar2.jpg" alt="sagar" />
 					</div>
 
-					<div className="mt-1 flex flex-col gap-y-3 text-justify font-semibold text-lg">
-						<h1 className="text-3xl font-bold text-left">✨ Your Vibe Code Needed a Therapist, So I Showed Up ✨</h1>
+					<div className="mt-4 flex flex-col gap-y-3 text-justify font-semibold text-lg">
+						<div className="font-bold flex justify-center "></div>
+						<h1 className="text-3xl text-center md:text-left">✨Your Vibe Code Needed a Therapist, So I Showed Up✨</h1>
 
-						<p>I have worked with some pretty cool startups like</p>
+						<p className="text-justify font-semibold text-lg">I have worked with some pretty cool startups like - </p>
 
-						<p>
+						<p className="text-justify font-semibold text-lg">
 							<span className="font-extrabold">ZentrumHub</span> - A Bootstrapped Startup revolutionizing the OTA (Online Travel Agency) Industry, Giving direct competition to big players like Booking.com, MakeMyTrip and recently recognized as the
 							Hot 25 Startup!
 						</p>
 
-						<p>
+						<p className="text-justify font-semibold text-lg">
 							<span className="font-extrabold">Nexus1.ai</span> - An AI based data extraction tool. Automate your whole legacy data kept in PDFs and CSVs to transform them into useful entries in your own Datalake. (A very complex idea oversimplified)
 						</p>
 
@@ -45,12 +46,12 @@ export default function Home() {
 
 						<h1 className="mt-5 text-3xl font-bold text-left">My Expertise?</h1>
 
-						<p>
-							I specialize in <span className="font-bold">Java Spring Boot, React, Next.js, NoSQL (DynamoDb), SQL(PostgreSQL)</span>
+						<p className="text-justify font-semibold text-lg">
+							I specialize in <span className="font-bold">Java Spring Boot, React, Next.js, NoSQL (DynamoDb), SQL(PostgreSQL) with 1.5 Years of Experience</span>
 						</p>
 
-						<p>
-							<span className="font-bold text-xl">&bull;Java</span> - A little verbose but the most reliable language out there.
+						<p className="text-justify font-semibold text-lg">
+							<span className="font-bold text-xl">&bull;Java</span> - A little verbose but the most reliable language out there. This is my go to language for my hobby project as well as professional work.
 						</p>
 					</div>
 				</div>
