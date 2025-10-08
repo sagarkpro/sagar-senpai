@@ -26,3 +26,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* button anims */
+
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+  color: black;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.ripple-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.ripple-btn:hover {
+  background-color: orangered; /* target color */
+  color: white;
+}
+
+.ripple-btn:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+.ripple-btn span {
+  position: relative;
+  z-index: 1;
+}

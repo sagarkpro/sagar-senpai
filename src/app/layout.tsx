@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inconsolata } from "next/font/google";
+import { Geist, Geist_Mono, Inconsolata, Lobster } from "next/font/google";
 import "./globals.css";
 import { PrimeReactProvider } from 'primereact/api';
 

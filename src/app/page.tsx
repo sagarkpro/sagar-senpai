@@ -1,26 +1,44 @@
-"use server"
+"use server";
 
+import { Lobster } from "next/font/google";
 import Image from "next/image";
+
+const lobster = Lobster({
+	subsets: ["latin"],
+	weight: ["400"],
+	style: ["normal"],
+	display: "swap",
+});
 
 export default async function Home() {
 	return (
 		<div className="flex justify-center py-8 px-4">
 			<div className="w-[70rem]">
-				<div className="flex w-full justify-center">
-					<div className="flex gap-x-8 mb-6">
+				<div className="flex flex-wrap w-full justify-center mb-4 gap-y-4">
+					<div className={`w-full md:w-1/3 text-center md:text-left  text-5xl pl-0 md:pl-8 shrink-0 ${lobster.className}`}>Sagar Khatri</div>
+					<div className="w-full md:w-1/3 flex gap-x-8 shrink-0 justify-center">
 						<a href="https://www.linkedin.com/in/sagarkhatri01/" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/linkedin.png" alt="linkedin" />
 						</a>
 
-            <a href="https://github.com/sagarkpro?tab=stars" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+						<a href="https://github.com/sagarkpro?tab=stars" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/github.png" alt="github" />
 						</a>
 
-            <a href="https://www.instagram.com/astute_sagar/" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
+						<a href="https://www.instagram.com/astute_sagar/" target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
 							<Image className="object-cover" fill objectFit="cover" src="/instagram.png" alt="instagram" />
 						</a>
 					</div>
+
+					<div className="w-full md:w-1/3 shrink-0 flex justify-end">
+						<button className="w-full md:w-max ripple-btn p-0 px-4 h-12 font-bold rounded-3xl text-2xl">
+							<span>
+								<a href="mailto:sagarkhatri.pro@gmail.com">Hire me</a>
+							</span>
+						</button>
+					</div>
 				</div>
+
 				<div className="w-full flex flex-col md:flex-row md:gap-x-20">
 					<div className="w-full aspect-[1/1.5] md:m-0 md:w-[31rem] md:h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
 						<Image className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" src="/sagar2.jpg" alt="sagar" />
