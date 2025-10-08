@@ -1,6 +1,8 @@
+"use server"
+
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
 	return (
 		<div className="flex justify-center py-8 px-4">
 			<div className="w-[70rem]">
