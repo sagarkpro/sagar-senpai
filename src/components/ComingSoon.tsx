@@ -9,5 +9,5 @@ const lobster = Lobster({
 });
 
 export default function ComingSoon() {
-	return <div className={`flex w-full h-[calc(100svh-48px)] justify-center items-center text-5xl ${lobster.className}`}>This page is coming soon!</div>;
+	return <div className={`flex w-full h-[calc(100svh-48px)] justify-center items-center text-5xl text-center ${lobster.className}`}>This page is coming soon!</div>;
 }

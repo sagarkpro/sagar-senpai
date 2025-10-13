@@ -1,24 +1,26 @@
 "use server";
 
-import { socialLinks } from "@/Constants/Socials";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MobileSIdebar from "./MobileSIdebar";
 
 export default async function Navbar() {
-	function getRandomSocials(): string {
-		const socialsArray: string[] = Array.from(socialLinks.values());
-		const randomIndex = Math.floor(Math.random() * socialsArray.length);
-		return socialsArray[randomIndex];
-	}
+	// function getRandomSocials(): string {
+	// 	const socialsArray: string[] = Array.from(socialLinks.values());
+	// 	const randomIndex = Math.floor(Math.random() * socialsArray.length);
+	// 	return socialsArray[randomIndex];
+	// }
 
 	return (
-		<div className="bg-background-contrast my-4 mx-8 p-2 px-2.5 flex justify-start items-center rounded-3xl">
+		<div className="bg-background-contrast my-4 mx-4 md:mx-8 p-2 px-2.5 flex justify-start items-center rounded-3xl">
 			<Link href="/" className="relative w-[34px] aspect-square rounded-full overflow-clip hover:cursor-pointer">
 				<Image src="/sagar2.jpg" alt="sagar" fill objectFit="cover"></Image>
 			</Link>
 
-			<div className="mx-6 flex w-full justify-between items-center">
+			<MobileSIdebar/>
+
+			<div className="2xs:hidden md:flex mx-6 w-full justify-between items-center">
 				<a href="/my-journey" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
 					My Journey <div>🌱</div>
 				</a>
