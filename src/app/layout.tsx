@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inconsolata, Lobster } from "next/font/google";
 import "./globals.css";
 import { PrimeReactProvider } from 'primereact/api';
 import { Analytics } from "@vercel/analytics/next";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -36,7 +37,10 @@ export default function RootLayout({
 			<Analytics/>
 			<body className={`${inconsolata.className} antialiased`}>
         <PrimeReactProvider>
-          {children}
+          <div className="w-full">
+						<Navbar/>
+						{children}
+					</div>
         </PrimeReactProvider>
       </body>
 		</html>
