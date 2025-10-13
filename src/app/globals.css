@@ -40,6 +40,7 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:after {
     content: '';
     position: absolute;
@@ -50,6 +51,7 @@ body {
     background-color: #fff;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -61,8 +63,10 @@ body {
     transition: all .3s;
     z-index: -1;
   }
+
   &:hover {
     color: #fff;
+
     &:before {
       width: 100%;
     }
@@ -143,5 +147,24 @@ body {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .customized-timeline .p-timeline-event:nth-child(even) {
+    flex-direction: row !important;
+  }
+
+  .customized-timeline .p-timeline-event:nth-child(even) .p-timeline-event-content {
+    text-align: left !important;
+  }
+
+  .customized-timeline .p-timeline-event-opposite {
+    flex: 0;
+  }
+
+  .customized-timeline .p-card {
+    margin-top: 1rem;
   }
 }
