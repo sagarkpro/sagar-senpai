@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ImCross } from "react-icons/im";
 import { useState } from "react";
 
-export default function MobileSIdebar() {
+export default function MobileSidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   return (

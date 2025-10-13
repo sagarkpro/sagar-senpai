@@ -15,7 +15,7 @@ export default async function Home() {
 	return (
 		<div className="flex justify-center mt-1 pb-8 px-4">
 			<div className="w-[70rem]">
-				<div className="flex flex-wrap w-full justify-center mb-4 gap-y-4">
+				<div className="flex flex-wrap w-full justify-center items-center mb-4 gap-y-4">
 					<div className={`w-full md:w-1/3 text-center md:text-left text-5xl pl-0 md:pl-4 shrink-0 ${lobster.className}`}>Sagar Khatri</div>
 					<div className="w-full md:w-1/3 flex gap-x-8 shrink-0 justify-center mb-1">
 						<a href={socialLinks.get("linkedin")} target="_blank" className="w-[3rem] h-[3rem] shrink-0 relative rounded-lg overflow-clip hover:cursor-pointer">
@@ -32,7 +32,7 @@ export default async function Home() {
 					</div>
 
 					<div className="w-full md:w-1/3 shrink-0 flex justify-end">
-						<button className="side-animate w-full md:w-max p-0 px-4 h-12 font-bold rounded-3xl text-2xl">
+						<button className="side-animate w-full md:w-max p-0 px-4 h-10 font-bold rounded-3xl text-2xl">
 							<span>
 								<a href="mailto:sagarkhatri.pro@gmail.com">Hire me</a>
 							</span>
