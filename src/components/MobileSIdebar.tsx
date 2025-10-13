@@ -9,13 +9,13 @@ export default function MobileSIdebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   return (
-    <div className="text-white w-full 2xs:flex md:hidden justify-end px-4">
+    <div className="text-white w-full 2xs:flex md:hidden justify-end px-1">
 				<button
 					onClick={(e) => {
 						setIsSidebarOpen(true);
 						e.stopPropagation();
 					}}
-					className="hover:cursor-pointer w-10 aspect-square rounded-md bg-white text-black flex items-center justify-center text-2xl"
+					className="hover:cursor-pointer w-8 aspect-square rounded-full bg-white text-black flex items-center justify-center"
 				>
 					<FaListUl />
 				</button>
