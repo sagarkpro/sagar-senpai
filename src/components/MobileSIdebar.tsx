@@ -9,7 +9,7 @@ export default function MobileSIdebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   return (
-    <div className="text-white w-full 2xs:flex md:hidden justify-end px-1">
+    <div className="text-white w-full 2xs:flex md:hidden justify-end">
 				<button
 					onClick={(e) => {
 						setIsSidebarOpen(true);
