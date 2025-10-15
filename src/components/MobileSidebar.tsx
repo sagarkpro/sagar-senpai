@@ -32,10 +32,10 @@ export default function MobileSidebar() {
 								<a href="/my-journey" className="rotate-child-div flex gap-x-3">
 									My Journey <div>🌱</div>
 								</a>
-								<a href="/my-journey" className="rotate-child-div flex gap-x-3">
+								<a href="/projects" className="rotate-child-div flex gap-x-3">
 									Projects <div>🛠️</div>
 								</a>
-								<a href="/my-journey" className="rotate-child-div flex gap-x-3">
+								<a href="/testimonials" className="rotate-child-div flex gap-x-3">
 									Testimonials <div>⭐</div>
 								</a>
 							</div>
