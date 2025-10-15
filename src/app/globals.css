@@ -11,6 +11,7 @@
   --color-primary: #fd5c63;
   --color-background: var(--background);
   --color-background-contrast: #2c2c2c;
+  --color-background-light: #4b4b4b;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -18,6 +19,7 @@
 
 /* @media (prefers-color-scheme: dark) { */
 :root {
+  --color-background-light: #4b4b4b;
   --primary: #fb5b63;
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -73,45 +75,6 @@ body {
   }
 }
 
-/* .ripple-btn {
-  position: relative;
-  overflow: hidden;
-  color: black;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.4s ease;
-}
-
-.ripple-btn::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-  z-index: 0;
-}
-
-.ripple-btn:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-.ripple-btn:hover::after {
-  width: 300%;
-  height: 300%;
-}
-
-.ripple-btn span {
-  position: relative;
-  z-index: 1;
-} */
-
 .rotate-child-div:hover>div {
   animation: spin-once 0.8s ease-out forwards;
 }
@@ -166,5 +129,14 @@ body {
 
   .customized-timeline .p-card {
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .p-timeline-event-opposite {
+    display: none !important;
+  }
+  .p-timeline-event-content{
+    padding: 0;
   }
 }

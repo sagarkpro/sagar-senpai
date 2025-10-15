@@ -3,5 +3,5 @@ export default interface TimelineEvent {
     organization: string;
     date: string;
     image: string;
-    content: string;
+    contents: string[];
 }
