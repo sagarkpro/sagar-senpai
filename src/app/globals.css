@@ -97,6 +97,32 @@ body {
   animation: aura-glow 2s infinite ease-in-out;
 }
 
+.p-dialog-header, .p-dialog-content{
+  background: var(--color-background-contrast);
+}
+
+.p-dialog-header{
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+.p-dialog-content{
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+	color: #000000;
+	background: #f3f4f6;
+	border-color: none;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:enabled {
+	color: black;
+	background: var(--color-background-light);
+	border-color: none;
+}
+
 @keyframes aura-glow {
   0%, 100% {
     box-shadow: 0 0 7px 2px rgba(255,255,255,0.4);
