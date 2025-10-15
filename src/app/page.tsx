@@ -33,19 +33,17 @@ export default async function Home() {
 
 				<div className="w-full md:w-1/3 shrink-0 flex justify-end">
 					<button className="side-animate w-full md:w-max p-0 px-4 h-10 font-bold rounded-3xl text-2xl">
-						<span>
-							<a href="mailto:sagarkhatri.pro@gmail.com">Hire me</a>
-						</span>
+						<a href="mailto:sagarkhatri.pro@gmail.com">Hire me</a>
 					</button>
 				</div>
 			</div>
 
-				<div className="w-full flex flex-col md:flex-row md:gap-x-20">
-					<div className="w-full aspect-[1/1.5] md:m-0 md:w-[31rem] md:h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
-						<Suspense fallback={<div className="bg-background-contrast animate-pulse w-full h-full" />}>
-							<Image src="/sagar2.jpg" alt="sagar" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" />
-						</Suspense>
-					</div>
+			<div className="w-full flex flex-col md:flex-row md:gap-x-20">
+				<div className="w-full aspect-[1/1.5] md:m-0 md:w-[31rem] md:h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
+					<Suspense fallback={<div className="bg-background-contrast animate-pulse w-full h-full" />}>
+						<Image src="/sagar2.jpg" alt="sagar" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" />
+					</Suspense>
+				</div>
 
 				<div className="mt-4 flex flex-col gap-y-3 text-justify font-semibold text-lg">
 					<div className="font-bold flex justify-center "></div>

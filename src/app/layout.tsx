@@ -56,13 +56,13 @@ export async function generateMetadata() {
 			title: "Sagar Khatri | Software Engineer & AI Enthusiast",
 			description:
 				"I'm Sagar Khatri, a Software Engineer from Pune, Maharashtra, India, and the creator of sagarsenpai.co.in. I specialize in building modern, high-performance web applications using React, Next.js, Java, and Spring Boot, and I’m currently open to exciting opportunities across India.",
-			siteName: "Sagar Senpai",
+			siteName: "Sagar Khatri",
 			locale: "en_IN",
 		},
 
 		twitter: {
 			card: "summary_large_image",
-			title: "Sagar Senpai | Software Engineer & AI Enthusiast",
+			title: "Sagar Khatri | Software Engineer & AI Enthusiast",
 			description:
 				"I'm Sagar Khatri, a Software Engineer from Pune, Maharashtra, India, and the creator of sagarsenpai.co.in. I specialize in building modern, high-performance web applications using React, Next.js, Java, and Spring Boot, and I’m currently open to exciting opportunities across India.",
 		},
