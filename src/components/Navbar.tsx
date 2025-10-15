@@ -21,10 +21,10 @@ export default async function Navbar() {
 				<a href="/my-journey" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
 					My Journey <div>🌱</div>
 				</a>
-				<a href="/my-journey" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
+				<a href="/projects" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
 					Projects <div>🛠️</div>
 				</a>
-				<a href="/my-journey" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
+				<a href="/testimonials" className="rotate-child-div flex gap-x-1 font-extrabold text-white text-xl hover:text-primary transition-colors duration-300 ease-in-out">
 					Testimonials <div>⭐</div>
 				</a>
 			</div>
