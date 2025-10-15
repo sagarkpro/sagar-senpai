@@ -3,6 +3,7 @@
 import { socialLinks } from "@/Constants/Socials";
 import { Lobster } from "next/font/google";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const lobster = Lobster({
 	subsets: ["latin"],
@@ -42,7 +43,9 @@ export default async function Home() {
 
 				<div className="w-full flex flex-col md:flex-row md:gap-x-20">
 					<div className="w-full aspect-[1/1.5] md:m-0 md:w-[31rem] md:h-[47rem] shrink-0 relative rounded-[3rem] overflow-clip group">
-						<Image src="/sagar2.jpg" alt="sagar" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" />
+						<Suspense fallback={<div className="bg-background-contrast animate-pulse w-full h-full" />}>
+							<Image src="/sagar2.jpg" alt="sagar" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" fill objectFit="cover" />
+						</Suspense>
 					</div>
 
 					<div className="mt-4 flex flex-col gap-y-3 text-justify font-semibold text-lg">
