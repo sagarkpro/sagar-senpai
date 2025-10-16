@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sagarsenpai.co.in/
+
+# Sitemaps
+Sitemap: https://www.sagarsenpai.co.in/sitemap.xml
