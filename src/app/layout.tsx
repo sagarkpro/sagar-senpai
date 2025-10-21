@@ -6,6 +6,7 @@ import { PrimeReactProvider } from "primereact/api";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import { FaFileDownload } from "react-icons/fa";
 
 const inconsolata = Inconsolata({
 	subsets: ["latin"],
@@ -112,6 +113,13 @@ export default async function RootLayout({
 							open to exciting opportunities across India.
 						</h1>
 					</div>
+					{/* my button: */}
+					<button className="side-animate !fixed bottom-4 right-4 md:bottom-8 md:right-8 p-0 px-4 h-10 font-bold rounded-3xl text-2xl">
+						<a href="/resume.pdf" download={"Sagar_Khatri_Resume.pdf"} className="flex items-center gap-x-1">
+							Resume
+							<FaFileDownload />
+						</a>
+					</button>
 				</PrimeReactProvider>
 			</body>
 		</html>
