@@ -115,7 +115,7 @@ export default async function RootLayout({
 					</div>
 					{/* my button: */}
 					<button className="side-animate !fixed bottom-4 right-4 md:bottom-8 md:right-8 p-0 px-4 h-10 font-bold rounded-3xl text-2xl">
-						<a href="/resume" download={"Sagar_Khatri_Resume.pdf"} className="flex items-center gap-x-1">
+						<a href="/resume" className="flex items-center gap-x-1">
 							Resume
 							<FaFileDownload />
 						</a>
