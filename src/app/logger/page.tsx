@@ -1,4 +1,5 @@
-"use server";
+export const dynamic = "force-dynamic";
+
 import { Accordion, AccordionTab } from "primereact/accordion";
 import { supabase } from "../lib/supabaseClient";
 import DeleteLog from "./_components/DeleteLog";
