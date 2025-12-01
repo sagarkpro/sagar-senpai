@@ -36,6 +36,10 @@ async function logApi(req: NextRequest){
     if (error) {
       console.error('Error inserting log into Supabase:', error);
     }
+    else{
+      console.log("logged data to supabase", new Date());
+      
+    }
   } catch (err) {
     console.error('Unexpected error while logging request:', err);
   }

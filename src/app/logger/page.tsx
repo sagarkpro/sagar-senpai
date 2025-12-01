@@ -4,11 +4,15 @@ import DeleteLog from "./_components/DeleteLog";
 
 // This is a Server Component by default in the app router
 export default async function LogsPage() {
-	const { data, error } = await supabase.from("logs").select("id, logItem").order("id", { ascending: false }).limit(100); // adjust as needed
+	const { data, error } = await supabase.from("logs").select("id, logItem").limit(100); // adjust as needed
+
 
 	if (error) {
 		console.error("Error fetching logs:", error);
 	}
+  else
+  console.log("fetched data: ", data);
+  
 
 	const logs = data ?? [];
 
