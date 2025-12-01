@@ -123,6 +123,13 @@ body {
 	border-color: none;
 }
 
+.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link, .p-accordion .p-accordion-content, .p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled) .p-accordion-header-link{
+  background-color: var(--color-background-contrast);
+  color: white;
+  border: none;
+}
+
+
 @keyframes aura-glow {
   0%, 100% {
     box-shadow: 0 0 7px 2px rgba(255,255,255,0.4);

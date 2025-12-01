@@ -15,7 +15,7 @@ export default function DeleteLog({ logId }: { logId: string }) {
 		}
 	}
 	return (
-		<button onClick={deleteLog} className="bg-white hover:cursor-pointer text-black p-0 px-4 h-10 font-bold rounded-full text-base w-max m-2">
+		<button onClick={(e)=> {deleteLog(); e.stopPropagation()}} className="bg-white hover:cursor-pointer text-black p-0 px-4 h-10 font-bold rounded-full text-base w-max m-2">
 			<FaTrash />
 		</button>
 	);
