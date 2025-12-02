@@ -1,43 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { supabase } from "./app/lib/supabaseClient";
+import { formDataToJson } from "./utils/FormDataToJson";
 
 export async function middleware(req: NextRequest) {
-  console.log("\n\nINSIDE MIDDLEWARE");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let body: any = null;
-  const contentType = req.headers.get('content-type') || '';
-
-  if (contentType.includes('application/json')) {
-    try {
-      body = await req.json();
-    } catch {
-      // body stays null if parse fails
-      body = null;
-    }
-  }
-
-  const logObject = {
-    method: req.method,
-    url: req.nextUrl?.href ?? req.url,
-    pathname: req.nextUrl?.pathname,
-    searchParams: Object.fromEntries(req.nextUrl?.searchParams ?? []),
-    headers: Object.fromEntries(req.headers),
-    body,
-    timestamp: new Date().toISOString(),
-  };
-
-  console.log("middleware logger: ", logObject);
-
-  if (body?.challenge) {
-    console.log("slackbot challenge");
-
-    return new NextResponse(JSON.stringify({ challenge: body.challenge }), {
-      status: 200,
-    });
-  }
-
-
-
   // Handle preflight (OPTIONS)
   if (req.method === "OPTIONS") {
     return new NextResponse(null, {
@@ -50,6 +16,8 @@ export async function middleware(req: NextRequest) {
     });
   }
 
+  logApi(req);
+
   // Add headers to all other responses
   const response = NextResponse.next();
   response.headers.set("Access-Control-Allow-Origin", "*");
@@ -61,3 +29,56 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: "/api/:path*", // Applies only to API routes
 };
+
+async function logApi(req: NextRequest) {
+  console.log("\nmiddleware logger");
+  
+  try {
+    // Clone the request body (if JSON) – be careful with large bodies
+    let body: unknown = null;
+    const contentType = req.headers.get('content-type') || '';
+
+    if (contentType.includes('application/json')) {
+      try {
+        body = await req.json();
+      } catch {
+        // body stays null if parse fails
+        body = null;
+      }
+    }
+    else if(contentType.includes('multipart/form-data') || contentType.includes("application/x-www-form-urlencoded")){
+      const formData = await req.formData();
+      body = formDataToJson(formData);
+    }
+
+    // You can add more to this logObject as needed
+    const logObject = {
+      method: req.method,
+      url: req.nextUrl?.href ?? req.url,
+      pathname: req.nextUrl?.pathname,
+      searchParams: Object.fromEntries(req.nextUrl?.searchParams ?? []),
+      headers: Object.fromEntries(req.headers),
+      body,
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("generated log: ", logObject);
+    
+
+    const { error } = await supabase
+      .from('logs')
+      .insert({
+        logItem: logObject,
+      });
+
+    if (error) {
+      console.error('Error inserting log into Supabase:', error);
+    }
+    else {
+      console.log("logged data to supabase", new Date());
+
+    }
+  } catch (err) {
+    console.error('Unexpected error while logging request:', err);
+  }
+}
