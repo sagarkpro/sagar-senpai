@@ -3,7 +3,8 @@ import type { NextRequest } from "next/server";
 
 export async function middleware(req: NextRequest) {
   console.log("\n\nINSIDE MIDDLEWARE");
-  let body: unknown = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let body: any = null;
   const contentType = req.headers.get('content-type') || '';
 
   if (contentType.includes('application/json')) {
@@ -14,6 +15,7 @@ export async function middleware(req: NextRequest) {
       body = null;
     }
   }
+
   const logObject = {
     method: req.method,
     url: req.nextUrl?.href ?? req.url,
@@ -25,6 +27,14 @@ export async function middleware(req: NextRequest) {
   };
 
   console.log("middleware logger: ", logObject);
+
+  if (body?.challenge) {
+    console.log("slackbot challenge");
+
+    return new NextResponse(JSON.stringify({ challenge: body.challenge }), {
+      status: 200,
+    });
+  }
 
 
 
