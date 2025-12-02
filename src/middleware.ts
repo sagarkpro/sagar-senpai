@@ -1,9 +1,33 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   console.log("\n\nINSIDE MIDDLEWARE");
-  
+  let body: unknown = null;
+  const contentType = req.headers.get('content-type') || '';
+
+  if (contentType.includes('application/json')) {
+    try {
+      body = await req.json();
+    } catch {
+      // body stays null if parse fails
+      body = null;
+    }
+  }
+  const logObject = {
+    method: req.method,
+    url: req.nextUrl?.href ?? req.url,
+    pathname: req.nextUrl?.pathname,
+    searchParams: Object.fromEntries(req.nextUrl?.searchParams ?? []),
+    headers: Object.fromEntries(req.headers),
+    body,
+    timestamp: new Date().toISOString(),
+  };
+
+  console.log("middleware logger: ", logObject);
+
+
+
   // Handle preflight (OPTIONS)
   if (req.method === "OPTIONS") {
     return new NextResponse(null, {
