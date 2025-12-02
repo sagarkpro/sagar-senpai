@@ -35,7 +35,7 @@ async function logApi(req: NextRequest) {
   
   try {
     // Clone the request body (if JSON) – be careful with large bodies
-    let body: unknown = null;
+    let body = null;
     const contentType = req.headers.get('content-type') || '';
 
     if (contentType.includes('application/json')) {
@@ -49,6 +49,14 @@ async function logApi(req: NextRequest) {
     else if(contentType.includes('multipart/form-data') || contentType.includes("application/x-www-form-urlencoded")){
       const formData = await req.formData();
       body = formDataToJson(formData);
+      try{
+        if(body?.payload){
+        body.payload = JSON.parse(body.payload);
+      }
+      }
+      catch(ex){
+        console.log("cant parse payload: ", ex);
+      }
     }
 
     // You can add more to this logObject as needed
