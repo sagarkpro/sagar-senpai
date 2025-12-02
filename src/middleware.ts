@@ -16,7 +16,7 @@ export async function middleware(req: NextRequest) {
     });
   }
 
-  logApi(req);
+  await logApi(req);
 
   // Add headers to all other responses
   const response = NextResponse.next();
@@ -62,9 +62,10 @@ async function logApi(req: NextRequest) {
       timestamp: new Date().toISOString(),
     };
 
-    console.log("generated log: ", logObject);
+    console.log("\ngenerated log: ", logObject);
     
-
+    console.log("\nsaving to supabase");
+    
     const { error } = await supabase
       .from('logs')
       .insert({
